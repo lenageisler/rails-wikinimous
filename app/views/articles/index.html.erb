@@ -1,0 +1,12 @@
+<%= render "shared/navbar" %>
+
+<div class="container col-6">
+    <% @articles.each do |article| %>
+        <article class="mb-3">
+            <h2>
+                <%= link_to article.title, article_path(article), class: "link" %>
+            </h2>
+            <%= truncate(article.content, length: 50) %>
+        </article>
+    <% end %>
+</div>

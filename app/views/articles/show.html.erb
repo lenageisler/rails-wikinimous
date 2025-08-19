@@ -1,0 +1,10 @@
+<%= render "shared/navbar" %>
+
+<div class="container col-5">
+    <h1>
+        <%= @article.title %>
+        <%= link_to "", "/articles/#{@article.id}/edit", class: "fa-solid fa-pen-to-square link" %>
+        <%= link_to "", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "fa-solid fa-trash link" %>
+    </h1>
+    <p><%= @article.content %></p>
+</div>
